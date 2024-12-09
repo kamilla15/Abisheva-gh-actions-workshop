@@ -11,9 +11,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    permissions:
+        contents: read
+        pull-requests: write
+       
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
@@ -29,3 +31,10 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - run: npm run test
+    - name: Vitest Badge Action
+      uses: wjervis7/vitest-badge-action@v1.0.0
+      with:
+        vite-config-path: vide-config.ts
+            
+             
