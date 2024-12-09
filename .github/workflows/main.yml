@@ -5,8 +5,10 @@ on:
 
 jobs:
   greet:
-    runs-on: ubuntu-latest
-    steps:
+     env:
+         MY_ENV: "John Dae"
+     runs-on: ubuntu-latest
+     steps:
         - name: Greet the User
           run: echo "Hello World!"
   # List all files in the current directory for comparison before and after actions/checkout@v2.
