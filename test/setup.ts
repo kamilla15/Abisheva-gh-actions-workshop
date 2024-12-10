@@ -4,7 +4,9 @@
  * see source: https://github.com/primer/react/blame/main/src/PageLayout/useStickyPaneHeight.ts#LG132
  * (if the CSS.supports calls are not there anymore, you might be able to remove this file again)
  */
-window.CSS = {
-  ...window.CSS,
-  supports: () => false,
-};
+if (typeof window !== "undefined") {
+  window.CSS = {
+    ...window.CSS,
+    supports: () => false,
+  };
+}
