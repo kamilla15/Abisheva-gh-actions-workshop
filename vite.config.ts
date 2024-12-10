@@ -1,23 +1,20 @@
+
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
-  },
   test: {
+    environment: "happy-dom", // Simulate a browser-like environment
+    setupFiles: ["./test/setup.ts"], // Ensure setup is run before tests
     coverage: {
-      reporter: ['text', 'lcov','json-summary'],
-      statements: 95, 
+      reporter: ["text", "lcov", "json-summary"], // Include json-summary for the GitHub Action
+      statements: 95,
       branches: 90,
       functions: 90,
       lines: 95,
     },
-    setupFiles: ["./test/setup.ts"], 
+  ##setupFiles: ["./test/setup.ts"], 
   },
 });
