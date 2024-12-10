@@ -15,6 +15,6 @@ export default defineConfig({
       functions: 90,
       lines: 95,
     },
-  ##setupFiles: ["./test/setup.ts"], 
+      setupFiles: ["./test/setup.ts"], 
   },
 });
