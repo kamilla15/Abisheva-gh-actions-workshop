@@ -12,12 +12,12 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      reporter: ['text', 'lcov'],
-      statements: 95, // Adjust these values
-      branches: 90,
-      functions: 90,
-      lines: 95,
+      reporter: ['text', 'lcov','json-summary'],
+      statements: 100, 
+      branches: 100,
+      functions: 100,
+      lines: 100,
     },
-    setupFiles: ["./test/setup.ts"], // Ensure the path to the setup file is correct
+    setupFiles: ["./test/setup.ts"], 
   },
 });
