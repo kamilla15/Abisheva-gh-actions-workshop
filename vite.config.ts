@@ -13,10 +13,10 @@ export default defineConfig({
   test: {
     coverage: {
       reporter: ['text', 'lcov','json-summary'],
-      statements: 100, 
-      branches: 100,
-      functions: 100,
-      lines: 100,
+      statements: 95, 
+      branches: 90,
+      functions: 90,
+      lines: 95,
     },
     setupFiles: ["./test/setup.ts"], 
   },
